@@ -37,16 +37,16 @@ public class Book implements Serializable {
     private String isbn;
 
     @Column
-    private Long pages;
+    private String pages;
 
-    @Column
+    @Column(name = "release_date")
     private LocalDate releaseDate;
 
     @Column
     @Basic(fetch = FetchType.LAZY)
     private String summary;
 
-    @Column
+    @Column(length = 2000)
     private String title;
 
     @ManyToOne

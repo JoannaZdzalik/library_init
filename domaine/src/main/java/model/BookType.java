@@ -2,5 +2,5 @@ package model;
 
 public enum BookType {
 
-    FANTASY, THRILLER, DOCUMENTARY
+    FANTASY, THRILLER, DOCUMENTARY, HISTORY, HORROR
 }

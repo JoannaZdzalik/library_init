@@ -1,20 +1,17 @@
 
-//dostosować do siebie
 INSERT INTO AUTHOR (FIRST_NAME, LAST_NAME, BIRTH_PLACE) VALUES ('Czeslaw', 'Milosz', 'Warszawa');
 
-INSERT INTO AUTHOR (FIRST_NAME, LAST_NAME, BIRTH_PLACE) VALUES ('Witold', 'Gombrowicz', 'Krakow');
+INSERT INTO AUTHOR (FIRST_NAME, LAST_NAME, BIRTH_PLACE) VALUES ( 'Witold', 'Gombrowicz', 'Krakow');
 
 INSERT INTO AUTHOR (FIRST_NAME, LAST_NAME, BIRTH_PLACE) VALUES ('Adam', 'Mickiewicz', 'Warszawa');
 
 INSERT INTO AUTHOR (FIRST_NAME, LAST_NAME, BIRTH_PLACE) VALUES ('Henryk', 'Sienkiewicz', 'Krakow');
 
-​
 
-INSERT INTO BORROWER_DETAILS (ADDRESS, PHONE, EMAIL) VALUES ('Prosta 2, Warszawa', '234567895', 'andrzej.kowal@gmail.com');
+INSERT INTO BORROWERDETAILS (ADDRESS, EMAIL, PHONE) VALUES ('Prosta 2, Warszawa', 'andrzej.kowal@gmail.com','234567895');
 
-INSERT INTO BORROWER_DETAILS (ADDRESS, PHONE, EMAIL) VALUES ('Slowackiego 5, Krakow', '234567895', 'julia.m123@op.pl');
+INSERT INTO BORROWERDETAILS (ADDRESS, EMAIL, PHONE) VALUES ('Slowackiego 5, Krakow',  'julia.m123@op.pl', '78567895');
 
-​
 
 INSERT INTO BORROWER (FIRST_NAME, LAST_NAME, BORROWER_DETAILS_ID) VALUES ('Andrzej', 'Kowalczyk', 1);
 
@@ -24,7 +21,6 @@ INSERT INTO BORROWER (FIRST_NAME, LAST_NAME, BORROWER_DETAILS_ID) VALUES ('Stefa
 
 INSERT INTO BORROWER (FIRST_NAME, LAST_NAME, BORROWER_DETAILS_ID) VALUES ('Maria', 'Raczkowska', null);
 
-​
 
 INSERT INTO BOOK(CATEGORY, BORROW, ISBN, PAGES, RELEASE_DATE, SUMMARY, TITLE, AUTHOR_ID) VALUES ('FANTASY', FALSE,'2364576896573', 345, '1994-01-01', 'A brilliant, semiautobiographical satirical novel from one of the foremost figures in twentieth-century Polish literature.', 'Trans-Atlantyk', 1);
 
