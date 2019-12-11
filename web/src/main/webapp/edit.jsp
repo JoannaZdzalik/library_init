@@ -18,9 +18,12 @@
         </div>
         <div class="form-group col-md-6">
             <label>Category</label>
-            <select id="category" class="form-control" name="category" >
+            <select id="category" class="form-control" name="category">
+                <option selected>${requestScope.book.category}</option>
                 <c:forEach var="category" items="${requestScope.categories}">
-                    <option>${category}</option>
+                    <c:if test="${requestScope.book.category ne category}">
+                        <option>${category}</option>
+                    </c:if>
                 </c:forEach>
             </select>
         </div>
@@ -28,8 +31,11 @@
         <div class="form-group col-md-6">
             <label>Author</label>
             <select class="form-control" name="authorId">
+                <option selected>${requestScope.book.author.firstName} ${requestScope.book.author.lastName}</option>
                 <c:forEach var="author" items="${requestScope.authors}">
+                    <c:if test="${requestScope.book.author.id ne author.id}">
                     <option value="${author.id}">${author.firstName} ${author.lastName}</option>
+                    </c:if>
                 </c:forEach>
             </select>
         </div>
@@ -51,12 +57,15 @@
 
     <div class="form-group">
         <label>Summary</label>
-        <input type="text" class="form-control"  name="summary "id="summary" value="${requestScope.book.summary}">
+        <textarea class="form-control" id="summary" name="summary"  rows="3">${requestScope.book.summary}</textarea>
+
     </div>
     <p></p>
-    <button type="submit" class="btn btn-outline-success">EDIT</button>
-    <a class="btn btn-outline-secondary" href="/HomeServlet" role="button">Cancel</a>
     <input type="hidden" name="bookId" value="${requestScope.book.id}">
+   <%-- <input type="hidden" name="authorId" value="${requestScope.book.authorId}">--%>
+    <button type="submit" class="btn btn-outline-success">SUBMIT</button>
+    <a class="btn btn-outline-secondary" href="/HomeServlet" role="button">Cancel</a>
+
 </form>
 
 <%@ include file="/WEB-INF/fragments/footer.jspf" %>

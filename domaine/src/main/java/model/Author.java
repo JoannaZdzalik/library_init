@@ -23,12 +23,12 @@ public class Author implements Serializable {
     private Long id;
 
     @Column(name = "first_name", nullable = false)
-    private String lastName;
-
-    @Column(name = "last_name", nullable = false)
     private String firstName;
 
-    @Column(name = "birth_place", nullable = false)
+    @Column(name = "last_name", nullable = false)
+    private String lastName;
+
+    @Column(name = "birth_place")
     private String birthPlace;
 
     @OneToMany(mappedBy = "author")

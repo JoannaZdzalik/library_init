@@ -28,19 +28,19 @@
             </thead>
             <tbody>
             <div class="form-group">
-            <c:forEach var="book" items="${requestScope.books}" varStatus="loop">
-                <tr>
-                    <th scope="row">${loop.index+1}</th>
-                    <td>${book.title}</td>
-                    <td>${book.isbn}</td>
-                    <td></td>
-<%--                    <td>${book.author.firstName}</td>--%>
-                    <td>${book.releaseDate}</td>
-                    <td>${book.pages}</td>
-<%--                    <td>${not empty book.borrowerName ? book.borrowerName : '-'}</td>--%>
-                    <td><input class="form-check-input" type="radio" name="bookId" value="${book.id}" checked></td>
-                </tr>
-            </c:forEach>
+                <c:forEach var="book" items="${requestScope.books}" varStatus="loop">
+                    <tr>
+                        <th scope="row">${loop.index+1}</th>
+                        <td>${book.title}</td>
+                        <td>${book.isbn}</td>
+                        <td>${book.author.lastName} ${book.author.firstName}</td>
+                        <td>${book.category}</td>
+                        <td>${book.releaseDate}</td>
+                        <td>${book.pages}</td>
+                        <td>${not empty book.borrowerName ? book.borrowerName : '-'}</td>
+                        <td><input class="form-check-input" type="radio" name="bookId" value="${book.id}" checked></td>
+                    </tr>
+                </c:forEach>
             </div>
             </tbody>
         </table>

@@ -37,13 +37,14 @@ public class EditBookServlet extends HttpServlet {
         book.setIsbn(isbn);
         book.setTitle(title);
         book.setSummary(summary);
+        book.setCategory(category);
 
 
         if (!Validations.validateISBN(isbn) || !Validations.validatePages(pages)) {
             response.sendRedirect("/inputError.jsp");
             return;
         }
-        bookService.update(book);
+        bookService.update(book, authorId);
         response.sendRedirect("/HomeServlet");
     }
 

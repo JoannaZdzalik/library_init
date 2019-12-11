@@ -36,28 +36,26 @@
         </div>
         <div class="form-group col-md-6">
             <label>Pages</label>
-            <input type="text" class="form-control"  name="pages" id="pages">
+            <input type="text" class="form-control" name="pages" id="pages">
         </div>
-
-
-
     </div>
     <div class="form-row">
-    <div class="form-group col-md-6">
-        <label >ISBN</label>
-        <input type="text" class="form-control" name="isbn" id="isbn" placeholder="ISBN">
-    </div>
+        <div class="form-group col-md-6">
+            <label>ISBN</label>
+            <input type="text" class="form-control" name="isbn" id="isbn" placeholder="ISBN">
+        </div>
+
     <div class="form-group col-md-6">
         <label>Release</label>
-        <input type="date" class="form-control"  name="releaseDate" id="releaseDate">
+        <input type="date" class="form-control" name="releaseDate" id="releaseDate">
     </div>
     </div>
 
     <div class="form-group">
         <label>Summary</label>
-        <input type="text" class="form-control"  name="summary "id="summary">
+        <textarea class="form-control" id="summary" name="summary" rows="3"></textarea>
     </div>
-<p></p>
+    <p></p>
     <button type="submit" class="btn btn-outline-success">Add</button>
     <a class="btn btn-outline-secondary" href="/HomeServlet" role="button">Cancel</a>
 

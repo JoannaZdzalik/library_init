@@ -49,6 +49,10 @@ public class Book implements Serializable {
     @Column(length = 2000)
     private String title;
 
+    @Column
+    @Transient
+    private String borrowerName;
+
     @ManyToOne
     @JoinColumn(name = "author_id")
     private Author author;
@@ -56,5 +60,8 @@ public class Book implements Serializable {
     @OneToMany(mappedBy = "book")
     private List<Borrow> borrows;
 
+    public Boolean isBorrow() {
+        return borrow;
+    }
 
 }

@@ -24,10 +24,10 @@ public class Borrower implements Serializable {
     private Long id;
 
     @Column(name = "first_name", nullable = false)
-    private String lastName;
+    private String firstName;
 
     @Column(name = "last_name", nullable = false)
-    private String firstName;
+    private String lastName;
 
     @OneToOne
     @JoinColumn(name = "borrower_details_id")

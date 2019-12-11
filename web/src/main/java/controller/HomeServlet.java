@@ -28,12 +28,13 @@ public class HomeServlet extends HttpServlet {
                 break;
             case EDIT:
                 response.sendRedirect("/EditBookServlet?bookId=" + bookId);
+                break;
             case SHOW:
                 response.sendRedirect("/ViewDetailsServlet?bookID="+ bookId);
+                break;
             case DELETE:
                 bookService.delete(bookId);
                 response.sendRedirect("/HomeServlet");
-
         }
     }
 
