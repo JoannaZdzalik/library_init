@@ -1,8 +1,12 @@
 package controller;
 
+import exception.ItemNotFoundException;
 import inputValidations.Validations;
+import model.Author;
 import model.Book;
 import model.BookType;
+import repository.AuthorRepository;
+import repository.BookRepository;
 import service.AuthorService;
 import service.BookService;
 
@@ -13,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Optional;
 
 @WebServlet("/EditBookServlet")
 public class EditBookServlet extends HttpServlet {
@@ -31,6 +36,8 @@ public class EditBookServlet extends HttpServlet {
         long bookId = Long.parseLong(request.getParameter("bookId"));
 
         Book book = new Book();
+//        Author author = Optional.ofNullable(authorRepository.read(book.getAuthor().getId()))
+//                .orElse(book.getAuthor());
         book.setId(bookId);
         book.setReleaseDate(releaseDate);
         book.setPages(pages);
@@ -38,6 +45,7 @@ public class EditBookServlet extends HttpServlet {
         book.setTitle(title);
         book.setSummary(summary);
         book.setCategory(category);
+      //  book.setAuthor(author);
 
 
         if (!Validations.validateISBN(isbn) || !Validations.validatePages(pages)) {
